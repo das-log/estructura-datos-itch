@@ -47,6 +47,12 @@ public class Dia{
       return calPerdidas;
     }
 
+    public double getVelocidad(){
+      return velocidad;
+    }
+
+
+
 public static void main(String[] args) {
  //creamos arreglo con cada dia de entrenamiento
  Scanner entrada = new Scanner(System.in);
@@ -66,11 +72,27 @@ public static void main(String[] args) {
 
   // Creamos un objeto Dia con los valores ingresados
   entrenamiento[i] = new Dia(velocidad, peso);
-System.out.println("Estadisticas para el dia "+i+1);
+System.out.println("Estadisticas para el dia "+i);
   System.out.println("El tiempo de fue de: " +entrenamiento[i].getTiempo()+" horas.");
   System.out.println("calorias perdidas: "+entrenamiento[i].getCalPerdidas()+" calorias.");
 
+
+
  }
+double distanciaTotal, velocidadPromedio, caloriasTotales;
+distanciaTotal = 10 * dias; //calculando los 10000 metros por la cantidad de dias de entrenamiento
+velocidadPromedio = 0;
+caloriasTotales = 0;
+   //codigo que hace calculos de la  velocidad promedio y calorías perdidas.
+  for (int c = 0; c < dias; c++){
+    velocidadPromedio += (entrenamiento[c].getVelocidad() / dias);
+    caloriasTotales += entrenamiento[c].caloriasPerdidas();
+    
+  }
+  System.out.println("Total distancia recorrida :"+distanciaTotal);
+  System.out.println("Total calorias quemadas: "+caloriasTotales);
+  System.out.println("velocidad promedio: " +velocidadPromedio);
+
 
  //agregar ciclo para porcentaje de mejora con condicion para que calcule apartir de la segunda fecha
 }
