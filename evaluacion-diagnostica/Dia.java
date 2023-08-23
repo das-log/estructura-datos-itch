@@ -11,10 +11,10 @@ import java.util.Scanner;
  /*se crea la clase dia */
 
 public class Dia{
-   private float tiempo;
+   private double tiempo;
    private int velocidad;
    private int peso;
-   private float calPerdidas;
+   private double calPerdidas;
 
    public Dia(int velocidad, int peso){
       this.velocidad = velocidad;
@@ -24,26 +24,26 @@ public class Dia{
    }
 
 
-   public float calculoTiempo(){ //funcion para calcular tiempo
+   public double calculoTiempo(){ //funcion para calcular tiempo
 
       /* consideramos 10km porque es equivalente a 10,000 metros, debido a la unidad de velocidad */
-      float tiempo = 10f/velocidad; 
+      double tiempo = 10/velocidad; 
       return tiempo;
     }
 
     
-    public float caloriasPerdidas(){ //funcion para calcular calorias perdidas
-      float calPerdidas = (float) (1.03 * peso * 10);
+    public double caloriasPerdidas(){ //funcion para calcular calorias perdidas
+      double calPerdidas = 1.03 * peso * 10;
       return calPerdidas;
     }
 
     //metodos accesores
 
-    public float getTiempo(){
+    public double getTiempo(){
       return tiempo;
     }
 
-    public float getCalPerdidas(){
+    public double getCalPerdidas(){
       return calPerdidas;
     }
 
@@ -66,9 +66,15 @@ public static void main(String[] args) {
 
   // Creamos un objeto Dia con los valores ingresados
   entrenamiento[i] = new Dia(velocidad, peso);
+System.out.println("Estadisticas para el dia "+i+1);
+  System.out.println("El tiempo de fue de: " +entrenamiento[i].getTiempo()+" horas.");
+  System.out.println("calorias perdidas: "+entrenamiento[i].getCalPerdidas()+" calorias.");
 
  }
 
+ //agregar ciclo para porcentaje de mejora con condicion para que calcule apartir de la segunda fecha
 }
+
+
 
 }
