@@ -6,10 +6,12 @@ public class ColorIntArgb {
     private short g;
     private short b;
 
-    private short shortAlpha;
-    private short shortRed;
-    private short shortGreen;
-    private short shortBlue;
+    private  short mAlpha;
+    private short mRed;
+    private short mGreen;
+    private short mBlue;
+
+    private final short mask = 0xFF;
 
     public ColorIntArgb(short a, short r, short g, short b) {
         this.a = a;
@@ -17,31 +19,27 @@ public class ColorIntArgb {
         this.g = g;
         this.b = b;
 
-        shortAlpha = 0;
-        shortBlue = 0;
-        shortGreen = 0;
-        shortRed = 0;
 
     }
 
     private String alpha() {
-        shortAlpha = (short) (shortAlpha | a);
-        return Integer.toBinaryString(shortAlpha);
+        mAlpha = (short) (mask & a);
+        return Integer.toBinaryString(mAlpha);
     }
 
     private String red() {
-        shortRed = (short) (shortRed | r);
-        return Integer.toBinaryString(shortRed);
+        mRed = (short) (mask & r);
+        return Integer.toBinaryString(mRed);
     }
 
     private String green() {
-        shortGreen = (short) (shortGreen | g);
-        return Integer.toBinaryString(shortGreen);
+        mGreen = (short) (mask & g);
+        return Integer.toBinaryString(mGreen);
     }
 
     private String blue() {
-        shortBlue = (short) (shortBlue | b);
-        return Integer.toBinaryString(shortBlue);
+        mBlue = (short) (mask & b);
+        return Integer.toBinaryString(mBlue);
     }
 
     @Override
