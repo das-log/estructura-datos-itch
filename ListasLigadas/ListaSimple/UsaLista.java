@@ -10,7 +10,7 @@ public class UsaLista{
 lista.obtenerNodoPorPosicion(1);
 lista.obtenerPosicionesNodos();
 		lista.imprimir();
-		lista.insertarAntesUltimo();
+		lista.insertarAntesUltimo("Z");
 		
 	}
 
