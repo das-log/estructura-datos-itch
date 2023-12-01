@@ -145,9 +145,13 @@ public class ListaSimple{
 		temp.name = nombre;
 
 		//obtenemos el penultimo nodo
-		while(temp2.next != null){
+		while(temp2.next.next != null){
 			temp2 = temp2.next;
 		}
+
+		//aqui guardamos el ultimo nodo para no perderlo
+		Node temp3 = temp2.next;
+		
 
 		
 
