@@ -137,16 +137,26 @@ public class ListaSimple{
 	}
 
 	//insertar nuevo nodo antes del ultimo
-	public void insertarAntesUltimo(){
+	public void insertarAntesUltimo(String nombre){
 		Node temp = new Node();
+		Node temp2 = new Node();
 		temp = this.top;
+		temp2 = this.top;
+		temp.name = nombre;
 
 		//obtenemos el penultimo nodo
-		while(temp.next != null){
-			temp = temp.next;
+		while(temp2.next != null){
+			temp2 = temp2.next;
 		}
-		System.out.println(temp.name);
-		temp = null;
+
+		
+
+		//ya encontrado el penultimo procedemos a agregar el nuevo nodo
+		//temp2 ya apunta al penultimo
+		//hacemos que temp apunte al nuevo nodo
+
+		
+
 	}
 
 }
