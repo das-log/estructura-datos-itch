@@ -137,13 +137,16 @@ public class ListaSimple{
 	}
 
 	//insertar nuevo nodo antes del ultimo
-	public void insertarAntesUltimo(String nombre){
+	public void insertarAntesUltimo(){
 		Node temp = new Node();
 		temp = this.top;
+
+		//obtenemos el penultimo nodo
 		while(temp.next != null){
 			temp = temp.next;
-			System.out.println(temp.name);
 		}
+		System.out.println(temp.name);
+		temp = null;
 	}
 
 }
