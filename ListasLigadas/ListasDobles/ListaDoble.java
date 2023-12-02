@@ -127,17 +127,35 @@ public class ListaDoble{
 	//TODO: Crear el método para borrar el nodo buscado
 	//Adecuación del método de borrado: borrarCualquierNodo()
 
-}
+	public void insertarAntesUltimo(String nombre){
+		Node temp = new Node();
+		temp.name = nombre;
+		temp.next = null;
+		temp.previous = null;
+	
+		// Comprueba si la lista está vacía
+		if (topForward == null) {
+			topForward = temp;
+			topBackward = temp;
+			return;
+		}
+	
+		if (topForward.next == null) { // Solo hay un nodo en la lista
+			temp.next = topForward;
+			topForward.previous = temp;
+			topForward = temp;
+			topBackward = temp.next;
+		} else {
+			Node temp2 = topBackward.previous;
+			temp2.next = temp;
+			temp.previous = temp2;
+			temp.next = topBackward;
+			topBackward.previous = temp;
+		}
+	}
 
+	
+		
 
-
-
-
-
-
-
-
-
-
-
+	}
 
