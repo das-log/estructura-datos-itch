@@ -25,6 +25,8 @@ public class UsaListaDoble{
 		System.out.println(lista);
 		lista.insertarAntesUltimo("A");
 		System.out.println(lista);
+		lista.obtenerPosicionesNodos();
+		lista.obtenerNodoPorPosicion(2);
 	}
 }
 
