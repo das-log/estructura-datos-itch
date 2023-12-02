@@ -185,8 +185,46 @@ public class ListaDoble{
 			temp.next = topBackward;
 			topBackward.previous = temp;
 		}
-	}
 
+		
+	
+
+		
+	}
+// intercambiar nodo existente por uno nuevo
+
+	public void intercambiarNodos(String existente, String nombre) {
+		Node temp = new Node();
+		temp.name = nombre;
+		temp.next = null;
+		temp.previous = null;
+	
+		Node nodoExistente = this.topForward;
+		while (nodoExistente != null && !nodoExistente.name.equals(existente)) {
+			nodoExistente = nodoExistente.next;
+		}
+	
+		if (nodoExistente == null) {
+			System.out.println("El nodo existente no fue encontrado.");
+			return;
+		}
+	
+		temp.previous = nodoExistente.previous;
+		temp.next = nodoExistente.next;
+	
+		if (nodoExistente.previous != null) {
+			nodoExistente.previous.next = temp;
+		} else {
+			this.topForward = temp;
+		}
+	
+		if (nodoExistente.next != null) {
+			nodoExistente.next.previous = temp;
+		} else {
+			this.topBackward = temp;
+		}
+	}
+	
 	
 		
 
