@@ -23,7 +23,8 @@ public class UsaListaDoble{
 		System.out.println(lista);
 		lista.borrarCualquierNodo("R");
 		System.out.println(lista);
-		
+		lista.insertarAntesUltimo("A");
+		System.out.println(lista);
 	}
 }
 
