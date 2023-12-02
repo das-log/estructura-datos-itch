@@ -127,6 +127,39 @@ public class ListaDoble{
 	//TODO: Crear el método para borrar el nodo buscado
 	//Adecuación del método de borrado: borrarCualquierNodo()
 
+	
+	// se implementa como dos funciones diferentes
+
+	public void obtenerPosicionesNodos() {
+		Node temp = this.topForward;
+		int c = 0;
+		while (temp != null) {
+			System.out.println("[posicion: " + c + " , nodo: " + temp.name + " ]");
+			temp = temp.next;
+			c++;
+		}
+
+	}
+
+	// buscar nodo por posicion
+	public Node obtenerNodoPorPosicion(int posicion) {
+		Node temp = new Node();
+		temp = this.topForward;
+		int c = 0;
+		while (temp != null) {
+			if (c == posicion) {
+				System.out.println(temp.name);
+				return temp;
+
+			}
+			temp = temp.next;
+			c++;
+
+		}
+		temp = null;
+		return null;
+	}
+
 	public void insertarAntesUltimo(String nombre){
 		Node temp = new Node();
 		temp.name = nombre;
