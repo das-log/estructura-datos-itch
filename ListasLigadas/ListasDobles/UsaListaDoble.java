@@ -27,6 +27,9 @@ public class UsaListaDoble{
 		System.out.println(lista);
 		lista.obtenerPosicionesNodos();
 		lista.obtenerNodoPorPosicion(2);
+		lista.intercambiarNodos("A", "J");
+		System.out.println(lista);
+		
 	}
 }
 
